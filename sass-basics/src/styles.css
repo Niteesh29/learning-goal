@@ -1,0 +1,66 @@
+/* You can add global styles to this file, and also import other style files */
+/* 
+//1. Operators
+//2. variables
+//3. Nesting
+//4. Mixin - basically used when we have to repeat few lines of css code again and again like display: flex
+            and then centering the item in that case you can use mixins.
+            define your properties inside mixins and simply use them @include <mixin name>
+//5. Parameters
+//6. Partials
+
+
+
+*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.main_header {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #22c9a5;
+}
+
+.main_header h1 {
+  color: #222f3e;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  text-transform: capitalize;
+}
+
+.main_header h1:hover {
+  color: #c8d6e5;
+}
+
+.main_header h1::after {
+  content: "project";
+}
+
+.main_header p {
+  color: #222f3e;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  text-transform: capitalize;
+}
+
+.main_header p:hover {
+  color: #c8d6e5;
+}
+/*# sourceMappingURL=styles.css.map */

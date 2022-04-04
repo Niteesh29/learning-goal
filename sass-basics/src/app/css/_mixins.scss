@@ -1,0 +1,39 @@
+@mixin div-prop {
+  width: 200px;
+  height: 200px;
+  color: white;
+}
+
+@mixin center_items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+@mixin flex-property
+ {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   
+}
+
+@mixin content-position
+{
+   position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+@mixin tile-position
+{
+    position: relative;
+}
+
+@mixin text_format($para1) {
+  // we can pass any number of parameter
+  color: #222f3e;
+  font-size: 1rem + 1rem;
+  letter-spacing: $para1; // for letter spacing we are passing parameter so that we can pass our value accordingly
+  text-transform: capitalize;
+}

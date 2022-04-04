@@ -1,0 +1,66 @@
+.container {
+  margin-top: 20px;
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.wrapper {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+}
+
+.item-1 {
+  background: #4c7064;
+  width: 200px;
+  height: 200px;
+  color: white;
+}
+
+.item-2 {
+  background: #315c4d;
+  width: 200px;
+  height: 200px;
+  color: white;
+}
+
+.item-3 {
+  background: #141817;
+  width: 200px;
+  height: 200px;
+  color: white;
+}
+
+.item-4 {
+  background: #7fff8a;
+  width: 200px;
+  height: 200px;
+  color: white;
+}
+
+.item-5 {
+  background: #05422e;
+  width: 200px;
+  height: 200px;
+  color: white;
+}
+
+.item-6 {
+  background: #ff7fd4;
+  width: 200px;
+  height: 200px;
+  color: white;
+}
+/*# sourceMappingURL=app.component.css.map */

@@ -1,0 +1,18 @@
+.container {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  overflow-x: hidden;
+}

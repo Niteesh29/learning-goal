@@ -1,0 +1,164 @@
+/* You can add global styles to this file, and also import other style files */
+/* 
+//1. Operators
+//2. variables
+//3. Nesting
+//4. Mixin - basically used when we have to repeat few lines of css code again and again like display: flex
+            and then centering the item in that case you can use mixins.
+            define your properties inside mixins and simply use them @include <mixin name>
+//5. Parameters
+//6. Partials
+
+
+
+*/
+@use  "sass:color"; //imported color module of sass
+@import "./app/css/mixins";
+@import "./app/css/variable";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav
+{
+  @extend %header-footer-section;
+  .brand
+  {
+    font-size: 18px;
+    font-weight: 400;
+      color: white;
+  }
+
+  a 
+  {
+  padding:  0 10px;
+  color: white;
+  margin: 10px;
+  font-size: 18px;
+  text-decoration: none;
+  }
+
+}
+
+.main_header {
+  width: 100vw;
+  height: 100vh;
+  @include center_items;
+
+  background: $bg-color;
+
+  button 
+  {
+
+    $primary-color:#404040;
+    color:$primary-color;
+    border: 1px solid color.scale($primary-color,$lightness:20%);
+  width:150px;
+  height:60px;
+  margin: 15px;
+  font-size:1.3em;
+  font-family:sans-serif;
+  // color:#ffffff;
+  outline:none;
+  background:darkgray;
+  border:none;
+  box-shadow: 0 1px 2px 1px cornflowerblue;
+  border-radius:10px;
+  }
+
+  //giving css property using Nesting
+  h1 {
+    @include text_format(0.2rem);
+    &:hover {
+      color: #c8d6e5;
+    }
+
+    &::after {
+      content: "project";
+    }
+  }
+
+  p {
+    @include text_format(0.1rem);
+
+    &:hover {
+      color: $nav-background;
+    }
+  }
+}
+
+.item-1 {
+  background: $black-100;
+  @extend %property-shared;
+}
+.item-2 {
+  background:$black-200;
+   @extend %property-shared;
+}
+.item-3 {
+  background:$black-300;
+   @extend %property-shared;
+}
+.item-4 {
+  background:$black-400;
+   @extend %property-shared;
+}
+.item-5 {
+  background: $black-500;
+   @extend %property-shared;
+}
+.item-6 {
+  background: $black;
+   @extend %property-shared;
+}
+
+footer{
+    @extend %header-footer-section;
+    bottom:0;
+    margin-top:15px;
+    overflow-x: hidden;
+    font-weight: 400;
+    
+    div
+    {
+      color: #ffffff;
+    }
+
+    .icons>i 
+    {
+      font-size: 18px;
+      margin: 0 5px;
+      padding: 3px;
+    
+    }
+
+}
+
+
+
+%property-shared {
+  @include tile-position;
+  @include div-prop;
+  p 
+  {
+     @include content-position;
+     @include center_items; 
+  }
+}
+
+%header-footer-section
+{
+   height: 50px;
+  background: $nav-background;
+  display:flex;
+  justify-content: space-between;
+  padding: 10px;
+  color:#c8d6e5;
+  position:fixed;
+  width: 100%;
+}
+
+
