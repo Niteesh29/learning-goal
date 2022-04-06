@@ -10,6 +10,17 @@
 //6. Partials
 
 
+//@extend 
+// The SASS provides an effective @extend directive that includes the set of CSS properties that is transferred from one selector to 
+//another using this directive. 
+//The @extend directive is helpful when you have elements that are almost similarly styled and vary only in some small things.
+
+// SASS variables can be used to assign value to a name which starts with $ symbol and later it can be referred to the name instead of 
+   the value.
+
+//The @import directive can be used to import SCSS files in our main file, therefore essentially, we can combine multiple files together.
+
+
 
 */
 @use  "sass:color"; //imported color module of sass
@@ -151,7 +162,7 @@ footer{
 
 %header-footer-section
 {
-   height: 50px;
+  height: 50px;
   background: $nav-background;
   display:flex;
   justify-content: space-between;
