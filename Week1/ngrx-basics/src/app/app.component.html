@@ -1,1 +1,20 @@
-<p>wdc</p>
+<!-- State in ngrx is immutable. Means you can not change the data inside a state. Change means you cant add or delete a new data to 
+    state. You can only update the state and that work is taken care by reducer. Whenever reducer recieves any action from any component
+     it just update the state in store. The structure of store will be always same.
+    
+    Whenever state is updated in store the selector get notified that data(state) has been updated  in store and components 
+    automatically gets the updated from store.
+
+    If we are using ngrx you dont need bunnch of services to maintain the state of different components(i.e user, products, categories etc)
+    In case of ngrx we have one centralised store
+
+    Store is like js object . its type of database.
+
+    The data which is dedicately for one particular component that data need not to be keep inside store. If any data which is sharable or you need to share that data among different components keep that data inside store
+
+    Dont keep routers data inside store
+
+    Any event is performed in the component you can send a action for reducer
+    
+    
+    -->
