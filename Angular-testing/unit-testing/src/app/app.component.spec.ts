@@ -1,16 +1,31 @@
 import { TestBed } from '@angular/core/testing';
+import { RouterModule, Routes } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { AboutComponent } from './about/about.component';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { APP_BASE_HREF } from "@angular/common"
 
 describe('AppComponent', () => {
+  const routes: Routes = [
+    { path: 'home', component: AboutComponent },
+    { path: 'about', component: AboutComponent },
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
+  ];
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        RouterModule.forRoot(routes)
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        HomeComponent,
+        AboutComponent
       ],
+      providers: [
+        { provide: APP_BASE_HREF, useValue: '/' }
+      ]
     }).compileComponents();
   });
 
@@ -30,6 +45,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('unit-testing app is running!');
+    expect(compiled.querySelector('h1').textContent).toContain('unit-testing');
   });
 });
