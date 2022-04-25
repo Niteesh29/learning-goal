@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { map } from 'rxjs/operators'
 
 @Component({
   selector: 'app-post',
@@ -9,6 +10,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class PostComponent implements OnInit {
   postForm: FormGroup
+  FormData: any
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -23,7 +25,27 @@ export class PostComponent implements OnInit {
     const postData = this.postForm.value;
     this.http.post('https://http-methods-interceptor-default-rtdb.firebaseio.com/posts.json', postData).subscribe(response => {
       console.log(response)
+      this.getData();
+
     })
+
+  }
+
+  getData() {
+    this.http.get('https://http-methods-interceptor-default-rtdb.firebaseio.com/posts.json').pipe(map((res) => {
+      let data = []
+
+      for (let key in res) {
+        data.push({
+          ...res[key], key
+        })
+      }
+
+      return data;
+    })).subscribe(res => {
+      this.FormData = res;
+    })
+
   }
 
 }
