@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+</head>
+
+<body>
+    <h2>Simple Clculator</h2>
+    <div>
+        <input type="text" id="input-value">
+    </div>
+    <div>
+        <span>Result:</span><span id="result">3</span>
+    </div>
+    <script type="text/javascript" src="calculator.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
+
+<!-- 
+    Spec file/Unit test file Naming conventions
+    ---------------------------------------------
+
+    Normally we will see different test file names in the different projects
+
+    Common spec file/unit test file name extensions we come across will be like 
+
+    *.spec.js  -- * is the file name and spec.js is file extension
+    *.test.js
+
+    Finally the unit testing file should be as 
+    (target file name).spec.js
+
+    Target file name is nothing but the source file for which we are writing the unit tests.
+    In our case it is calculator.js file so therefore the test file will be calculator.spec.js
+
+    A suits is simply a group of specs also we can say it as group of tests.
+    If you have lots of tests you will group them and that group is called as Suite
+
+
+    describe() is a method which is used to create a test suite and it is present globally once you added jasmine to your project so there is no need to import and all
+    
+    **Remember that: Spec and test are one and the same pretty much. But in jasmine we refer to test as spec
+                     A spec is short from of specification
+                     A spec is a set(group) of expectations that test the state of the code
+
+      //spec can be define use it() method . it contains two parameter firts title and second anaonymus function where you will write your expectation
+
+    Expectation you can think of it as assertion . Assertion is just a statement and the result of the statement either true or false(boolean)
+
+    Lets see with an example. We know that 5+5 =10 --) statement
+
+    For the above statement we write expectation as 
+    Expect 5+5 to be 10. And the result of this statement is true
+    Expect 5+4 to be 10 //That is actually false 
+
+    So to write such expectation in jasmine , jasmine provide one method that is called expect()
+
+    **What is passing spec and what is failing spec
+    ----------------------------------------------------------------
+
+    Spec with all true expectations is a passing spec. No matter we have 100 expectations, all expectations should be true
+    If we have a spec with one or more false expectations then it is a failing spec
+
+    **How to disable the test or test suits- Not by removing or commenting particular spec
+    -------------------------------------------------------------------------------------
+
+    DISABLED spec is a spec that will report as pending and will not be executed.
+    
+    When we need to write the disabled spec: Mostly  :
+
+    1.When you have changes in the code and you want to disable the spec from failing until your changes are completed
+
+   ** To disable one particular spec just put x before the it() method . Now your this test would be visible with msg that this spec/test is pending
+   
+    xit('should add number to the total',function()
+    {
+      const calculator = new Calculator()
+      calculator.add(5)
+
+      expect(calculator.total).toBe(5)
+    })
+
+
+    **To disable a entire test suite just put x before the describe() method .
+
+
+    **What is matcher in jasmine 
+    ------------------------------------------------------------------
+    A matcher is just a function and this function implements a boolean comparison between the actual value and expected value.
+
+    A matcher is also has the responsibile to report to the jasmine if the expectation is true or false.
+    Ultimately matcher decides whether the spec should be a passing spec or failing spec
+
+    **NEGATING A MATCHER
+    ------------------------------------------------------------------------------
+
+    You can put not before any matcher to negate it or your matcher will behave in opposite manner
+
+    ex.  it('should have unique calculator object')
+    {
+         const calculator1 = new Calculator() 
+         const calculator2 = new Calculator() 
+         expect(calculator1).not.toBe(calculator2) // now this matcher will behave opposite way
+
+
+    }
+
+   ** Jasmine's built-in matchers are very useful and work well in most scenarios. However
+
+
+
+
+
+
+
+    
+
+
+
+
+ -->
