@@ -120,6 +120,82 @@
     In TDD the starting point is a test case
 
 
+    **ANGULAR UNIT TESTING
+    -------------------------------------------------
+
+    The goal of the automated testing is to increase the quality of the software
+
+    Angular has two types of unit test
+    *Isolated test - if you trying to test single functionality. it does not depend on any other methods
+    *Integration - like testing of child component
+
+    E2E Testing is a kind of testing against a live running application . Means full application with live database,live server. This is
+    generally done through automating web browser.
+
+    Tests are written to manipulate the browser in an automated way to do things like click buttons, type values in the forms, navigate to the page and so on
+
+    Benefit of E2E testing is we can validate the application is working properly as a whole.
+
+    There are plenty of drawbacks of E2E testing which have to do with speed and difficulty of writing tests
+
+    Generally E2E testing are tend to be less reliable that other types of automated tests
+
+    Integration and functional testing is defined more than a unit but less than a complete application.
+
+    Normally these will be done to check that whether one part of the application is working with another part.
+
+    There are few Angular units that can be tested in isolation
+    *Pipe
+    *Service
+    *Class
+    *Component
+    *Directives
+
+    In isolation unit testing , we dont test the template parts for a component , only the logic behind it. In this test we test all the methods that have the expected behaviour
+
+    An integration Test is abit more complex. In Angular integration test we actually create a module that we are going to test
+    Normally there are two types of integration tests 
+
+    **Shallow Test
+    **Deep Test 
+
+    In shallow integration tests we only test a single component with its template.
+
+    In deep integration test we test many components actually having child component
+    Sometimes we get the scenario to test both parent and child component. This is called as deep integration test.
+
+    **Mocking
+    ------------------------
+    Most of the time class does not operate in isolation . Most classes or components have dependencies.
+
+    Types of mocks
+
+    *Dummies
+    *Stubs
+    *Spies
+
+
+    **How to make particular spec disable or pending
+    -----------------------------------------------------------
+    you can do it in two ways either put x before it() method or just call pending() method inside it() method .
+
+     it('should add two numbers', () => {
+    pending()
+      })
+
+   **If you intentionally want some test case to be failed How you can do that
+   ---------------------------------------------------------------------------------
+   just call fail() method inside particular spec
+
+    it('should add two numbers', () => {
+        fail() // now this spec will fail 
+    })
+
+
+
+
+
+
 
 
 
