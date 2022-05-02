@@ -16,17 +16,24 @@
                     <input type="text" class="form-control" formControlName="content">
                 </div>
             </div>
-            <div class="col-md-12 my-2">
-                <button type="submit" class="btn btn-info">Submit</button>
+            <div class="row">
+                <div class="col-md-6 my-1">
+                    <button type="submit" class="btn btn-info">Submit</button>
+                </div>
+                <div class="col-md-6 my-1">
+                    <button class="btn btn-info" (click)="onClearPost($event)">Delete Posts</button>
+                </div>
             </div>
+
 
         </form>
     </div>
+
 </div>
 
 <div class="container-fluid">
     <div class="jumbotron">
-        <table class="table bg-info text-white">
+        <table class="table bg-info text-white" *ngIf="!error">
             <thead>
                 <tr>
                     <th>Title</th>
@@ -41,5 +48,9 @@
 
             </tbody>
         </table>
+
+        <div *ngIf="error">
+            <div class="alert alert-danger">{{error}}</div>
+        </div>
     </div>
 </div>

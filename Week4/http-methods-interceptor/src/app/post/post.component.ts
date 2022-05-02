@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { map } from 'rxjs/operators'
+import { PostServiceService } from '../post-service.service';
+import { Post } from './post.model';
 
 @Component({
   selector: 'app-post',
@@ -10,8 +12,9 @@ import { map } from 'rxjs/operators'
 })
 export class PostComponent implements OnInit {
   postForm: FormGroup
-  FormData: any
-  constructor(private http: HttpClient) { }
+  FormData: Post[];
+  error = null
+  constructor(private postService: PostServiceService) { }
 
   ngOnInit(): void {
 
@@ -23,29 +26,27 @@ export class PostComponent implements OnInit {
 
   onCreatePost() {
     const postData = this.postForm.value;
-    this.http.post('https://http-methods-interceptor-default-rtdb.firebaseio.com/posts.json', postData).subscribe(response => {
+    this.postService.createPost(postData).subscribe((response) => {
       console.log(response)
-      this.getData();
+      this.getData()
+    })
+  }
 
+  getData() {
+    this.postService.fetchPost().subscribe((res) => {
+      this.FormData = res;
+    }, error => {
+      console.log(error)
+      this.error = error.message;
     })
 
   }
 
-  getData() {
-    this.http.get('https://http-methods-interceptor-default-rtdb.firebaseio.com/posts.json').pipe(map((res) => {
-      let data = []
-
-      for (let key in res) {
-        data.push({
-          ...res[key], key
-        })
-      }
-
-      return data;
-    })).subscribe(res => {
-      this.FormData = res;
-    })
-
+  onClearPost(event: Event) {
+    alert('clear post called')
+    event.preventDefault()
+    this.postService.clearPost();
+    this.FormData = []
   }
 
 }
