@@ -47,9 +47,10 @@ export class PostServiceService {
 
   clearPost() {
     return this.http.delete('https://http-methods-interceptor-default-rtdb.firebaseio.com/posts.json', { observe: 'events' }).pipe(tap(res => {
+      console.log(res)
 
     })).subscribe((res) => {
-      console.log(res)
+      // console.log(res)
     })
 
   }
