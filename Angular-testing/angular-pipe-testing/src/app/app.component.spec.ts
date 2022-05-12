@@ -26,10 +26,5 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('angular-pipe-testing');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('angular-pipe-testing app is running!');
-  });
+
 });

@@ -6,7 +6,7 @@ describe('MeanPipe', () => {
     pipe = new MeanPipe()
   })
   it('create an instance', () => {
-    const pipe = new MeanPipe();
+    pipe = new MeanPipe();
     expect(pipe).toBeTruthy();
   });
 

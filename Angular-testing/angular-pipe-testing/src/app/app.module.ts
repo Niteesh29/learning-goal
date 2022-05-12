@@ -5,16 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StrengthPipe } from './strength.pipe';
 import { MeanPipe } from './mean.pipe';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HoverfocusDirective } from './hoverfocus.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     StrengthPipe,
-    MeanPipe
+    MeanPipe,
+    HoverfocusDirective
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
