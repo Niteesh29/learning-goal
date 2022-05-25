@@ -111,7 +111,70 @@
 
     }
 
-   ** Jasmine's built-in matchers are very useful and work well in most scenarios. However
+   ** Jasmine's built-in matchers are very useful and work well in most scenarios. However sometimes we need to develp custom matchers to implement specific scenarios
+
+   A custom matcher at its root is a comparison function that takes an actual value and expected value.
+
+   To use a custom matcher you have to Register the custom matchers with Jasmine.addMatchers
+
+   Once a custom matcher is registered with Jamine , it is avaliable on any expectation.
+
+   const customMatcher = 
+   {
+       return {
+           Compare : function(actual,expected)
+           {
+               return 
+               {
+                   Pass:true,
+                   Message:''
+               }
+           }
+       }
+   }
+
+
+
+   **SETUP and TEARDOWN in Jasmine
+   ---------------------------------------------
+   To orgnize our specs more we need to know about the Setup and Teardown
+   Setup and TearDown is a part of the life cycle for our suits.
+
+   Setup is where you place prerequisites for your specs
+   it executes before specs are run. Jasmine offer two methods for this
+
+   beforeEach and beforeAll : these are two setup methods
+
+   **beforeEach: is executed before each spec it the suite in which it is called.
+
+   For example if you have 10 specs in the suite and you have a beforeEach method. That beforeEach method will be executed 10 times. That means One time before each spec execution
+
+   **beforeAll is very similar to beforeEach but it is executed only once before all the specs in the suite in which it is called
+
+
+   **Teardown in the life cycle of our suite is used to clean up the steps for your specs.
+     Teardown methods are executed after all specs are run
+
+     Jasmine offer two methods that are part of the teardown cycle
+     **afterEach
+     **afterAll
+
+
+     **Jasmine Spies
+
+     Jasmine is made for unit testing. Unit tests are supposed to tets only one component of your application.A component can be a function , an object, a module, basically everything self-contained that acts like a black box to the outside world.
+
+     You usually want to avoid that your unit tests fail because another component failed. Thats why you want to test your components in isolation as much as possible.
+
+     Spies create test doubles and help us to isolate dependencies for true unit testing
+
+     A test double is an object that can stand in for a real object in a test.
+
+     
+
+
+
+
 
 
 
