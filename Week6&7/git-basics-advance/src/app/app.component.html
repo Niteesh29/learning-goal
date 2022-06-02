@@ -108,6 +108,98 @@ COMMAND TO CREATE A NEW BRANCH
 git checkout -b login-feature
 
 
+COMMAND TO RENAME A  BRANCH
+---------------------------------
+checkout to the branch you wanna rename
+
+git branch -m <branch-new-name-as-per-your-wish>
+
+
+COMMAND TO DELETE A  BRANCH
+---------------------------------
+move to some other branch from branch you want to delete 
+
+git branch -d <branch-name-you-want-to-delete>
+
+
+MERGING TWO BRANCHES
+---------------------------
+Git Rebase 
+
+**Rebase is one of the most powerful Git command 
+**ebasing is often used as an alternative to merging
+**Rebasing a branch updates one branch with another by applying the commits of one branch on top of the commits of another branch 
+
+**Git Rebase is used to clean up our local commit history
+** Rebase is a advanced command which is used rarely
+** Merge preserve History
+** Rebase dosnt preserve History
+
+Common places where we can use Rebase
+
+1.Cleaning up your commits before sharing your branch
+2. Pulling changes from another branch without merge
+
+----------------------------------------------------------------------
+MODIFY OR CHANGE THE LAST OR LATEST COMMIT USING THE AMEND COMMAND
+----------------------------------------------------------------------
+
+git commit -ammend
+
+
+---------------------------------------------
+**GIT CHERRY PICK
+---------------------------------
+
+**Cherry Pick is used if you want to apply particular commit from one branch into another branch
+**Cherry pick is mainly used if you dont want to merge the whole branch and you want some of the commits
+
+Cherry pick just like rebase it is and advanced concept and also a powerful command .
+
+Cherry-pick is a useful tool, but always it is not a good option.
+
+It can cause duplicate commits.
+
+Mainly cherry pick is used for the bug fixes where you want to place that bugfix commit in all the version branches
+
+It is also used when we accidentally made a commit in wrong branch
+
+
+***************************************************************************
+Detached Head in GIT . How can we handle the detached head state in project
+****************************************************************************
+GIT HEAD -- when we are working we only checkout one branch at a time . This is also called as Head Branch
+
+Head is nothing but the reference to the branch
+
+Head not only reference a branch it also reference the commit sha1
+
+if the head points to a specific commit then it is called as detached head
+
+
+****************
+GIT RESET
+****************
+
+The term reset itself stands for undoing changes . Reset is often referred as confusing command. Reset does different things in different contexts. So thats why it is considered as complex command.
+
+reset is the command we use when we want to move the repository back to a previous commit, discarding any changes made
+after that commit.
+
+Reset has options 
+
+--hard -> moves the files both to working area and staging area
+
+--mixed -> moves the files only to stage area . (default option)
+
+--soft -> does not move the files
+
+
+
+
+
+
+
 
 
 
